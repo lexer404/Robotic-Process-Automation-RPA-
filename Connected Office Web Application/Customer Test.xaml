@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Customer_Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="848.8,3570.4" sap2010:WorkflowViewState.IdRef="Customer_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Customer_Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="848.8,3980" sap2010:WorkflowViewState.IdRef="Customer_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:sc1="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -41,6 +41,9 @@
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -104,26 +107,29 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Customer_Test" sap:VirtualizedContainerService.HintSize="771.2,3505.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Customer_Test" sap:VirtualizedContainerService.HintSize="784,3915.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="customersDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="customerDT" />
+      <Variable x:TypeArguments="x:Boolean" Name="continueLoop" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[customerDT]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="708.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Customers" WorkbookPath="C:\Users\ompab\Documents\NWU Documents\3rd Year\Second Semester\CMPG323\Project 4\CMPG323 EcoPower Logistics Data.xlsx" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Home Page - EcoPower_Logistics" sap:VirtualizedContainerService.HintSize="708.8,3265.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="454b9154-31af-4fe2-afc4-4cb6aad56c48" Version="V2">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[customerDT]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="721.6,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Customers" WorkbookPath="C:\Users\ompab\Documents\NWU Documents\3rd Year\Second Semester\CMPG323\Project 4\CMPG323 EcoPower Logistics Data.xlsx" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Home Page - EcoPower_Logistics" sap:VirtualizedContainerService.HintSize="721.6,3675.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="454b9154-31af-4fe2-afc4-4cb6aad56c48" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="675.2,3048.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="688,3458.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="choice" />
             </Sequence.Variables>
@@ -132,17 +138,17 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Customers'" sap:VirtualizedContainerService.HintSize="612.8,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="454b9154-31af-4fe2-afc4-4cb6aad56c48" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Customers'" sap:VirtualizedContainerService.HintSize="625.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="454b9154-31af-4fe2-afc4-4cb6aad56c48" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://cmpg323-ecopowerlogistics.azurewebsites.net/" CvTextArea="240, 191, 100, 17" CvTextArgument="Customers" CvType="Text" DesignTimeRectangle="230, 175, 119, 50" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Customers'" FullSelectorArgument="&lt;webctrl aaname='Customers' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Customers' tag='A' type='' class='nav-link text-dark' check:innerText='Customers' /&gt;" Guid="bb8fd21b-eb1e-42e6-9c0a-aab8a2d577a0" InformativeScreenshot="e341af65879e97eca90433dd30b94d01.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home Page - EcoPower_Logistics' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="612.8,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please Select what to test" OptionsString="Add;Edit:Delete" Title="Add, Edit or Delete">
+            <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="625.6,295.2" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please Select what to test" OptionsString="Add;Edit;Delete" Title="Add, Edit or Delete">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:String">[choice]</OutArgument>
               </ui:InputDialog.Result>
             </ui:InputDialog>
-            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="612.8,2402.4" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="625.6,2812" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="If" Condition="[choice = &quot;Insert&quot;]">
@@ -233,12 +239,28 @@
                   </ui:IfElseIfBlock>
                   <ui:IfElseIfBlock BlockType="ElseIf" Condition="[choice = &quot;Edit&quot;]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,104.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,514.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sc1:IEnumerable" Name="eachItem" />
+                          <Variable x:TypeArguments="ui:UiElement" Name="valueCheck" />
+                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Down" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="387.2,137.6" sap2010:WorkflowViewState.IdRef="NClick_7" InUiElement="[valueCheck]" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="454b9154-31af-4fe2-afc4-4cb6aad56c48" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cmpg323-ecopowerlogistics.azurewebsites.net/Customers" CvTextArea="1435, 376, 35, 20" CvTextArgument="Edit" CvType="Text" DesignTimeRectangle="1436, 371, 34, 27" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Edit'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='' aaname='Edit' check:innerText='Edit' /&gt;" Guid="0aa788be-d33b-4d0c-a667-6bb31ee3c455" InformativeScreenshot="7f9676e80e7fd45a200a2c4e114d8ba0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Index - EcoPower_Logistics' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target CvTextArea="730, 377, 72, 17" CvTextArgument="DeMoss" CvType="Text" DesignTimeRectangle="730, 377, 72, 17" ElementType="Text" FriendlyName="'DeMoss'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='2' tag='TD' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' aaname='                 DeMoss             ' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,224.8" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Version="V3" />
                       </Sequence>
                     </ui:IfElseIfBlock.Then>
                   </ui:IfElseIfBlock>
