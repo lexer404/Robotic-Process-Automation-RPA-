@@ -118,12 +118,12 @@
     </ui:InputDialog>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="ArgumentEmail">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="loginEmail" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="ArgumentPassword">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="loginPassword" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="loginEmail">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="loginEmail" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="loginPassword">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="loginPassword" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="500,421.6" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
