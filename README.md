@@ -27,3 +27,9 @@ When edit is selected, the first row will be edited.
 
 When delete is selected, all the details(rows) will be automatically deleted and "TRUE" will be written to the "Result" column in Excel. Reason for this was because if a row can be deleted it simply means that it was successfully added.
 
+Orchestor Link
+https://cloud.uipath.com/lexer404/DefaultTenant/orchestrator_/?tid=1550027&fid=4832060
+
+Eco Power Web App Link
+https://cmpg323-ecopowerlogistics.azurewebsites.net/
+
