@@ -1,35 +1,22 @@
-# CMPG323-PROJECT_4-37530399
+## Summary
+This repo is about a project on RPA. Links might not work/be done as hosting is stopped.
 
-### Prerequisites
-
-Before you start, ensure you have the following software installed on your system:
-
-- UiPath Studio (Version: Specify the version you're using)
+## Prerequisites
+Make sure the necessary software is installed on your computer before you start:
 - Microsoft Excel
+- UiPath Studio (Version: Please select the version you're using)
 
+## Usage Guidelines
+With its intuitive interface, this automation makes it easier to work with different tables. The project can be used as follows:
+1. Credential Input: - A pop-up will ask for your email address and password when the automation runs. This method prevents passwords from being stored in the code, ensuring security.
+2. Table Selection: - Following the submission of your credentials, a second pop-up window will show up letting you select which table (Orders, Order Details, Products, Customers) you wish to work with. This flexibility lets you concentrate on individual tables, which saves time.
+3. Logging In: – After that, the automated will log in with the supplied credentials.
+4. Table Communication:
+    - After logging in, the page for the chosen table will be displayed to you.
+    - You will be able to add, modify, and remove entries using the pop-up that appears after.
+5. Adding Entries: Clicking "Add" will cause the table to immediately update with all the required information (rows).
+6. Editing Entries: The first row will be editable if "Edit" is selected.
+7. Deleting Entries: Selecting "Delete" will immediately remove all entries (rows), and Excel will record "TRUE" in the "Result" column to show that the deletion was successful.
 
-# How the project should be used by users
-In this automation, when you run it a pop up will show to allow the user to insert password and email. Reason for this was because I wanted to save no password in the code(UiPath Studio files). The other reason for this pop up is to accomodate for a different user signing in, so that the automation doesn't insert the same logins for different users.
-
-After the credentials are entered another pop up window will show. This will let the user be able to select if they want to test for which table (Orders, Order Details, Products, Customers). Reason for the popup was to cater for when the user only wants to read in Products, so that they don't wait for the automation to do other tables before getting to the desired one.
-
-After the choice was made for which table to test, the automation will login with the provided credentials. 
-
-After loggin in, it will redirect to the page of the selected table. After that, a popup will show so that user can select to add, edit or delete.
-
-When add is selected all the details(rows) will be automatically added.
-
-# Reference List
-[Reference List.docx](https://github.com/lexer404/CMPG323-PROJECT_4-37530399/files/13043384/Reference.List.docx)
-
-
-When edit is selected, the first row will be edited.
-
-When delete is selected, all the details(rows) will be automatically deleted and "TRUE" will be written to the "Result" column in Excel. Reason for this was because if a row can be deleted it simply means that it was successfully added.
-
-Orchestor Link
-https://cloud.uipath.com/lexer404/DefaultTenant/orchestrator_/?tid=1550027&fid=4832060
-
-Eco Power Web App Link
-https://cmpg323-ecopowerlogistics.azurewebsites.net/
-
+## Additional Links
+Eco Power Web App: Visit the web app here: https://cmpg323-ecopowerlogistics.azurewebsites.net/.
